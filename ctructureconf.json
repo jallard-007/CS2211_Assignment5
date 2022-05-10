@@ -1,0 +1,10 @@
+{
+  "formatAllWorkspaceFolders.showLogs": false,
+  "formatWorkspaceFolder.showLogs": false,
+  "printer.indentationSize": 2,
+  "printer.indentationType": "spaces",
+  "printer.lineEndings": "lf",
+  "printer.lineWidth": 100,
+  "printer.multiVariableAlwaysNewline": false,
+  "printer.multiVariableMatchIndent": true
+}

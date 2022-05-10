@@ -100,7 +100,9 @@ void updateAthleteGender(Athlete_t *const athlete) {
 }
 
 static void printTableHeader(void) {
-  printf("Athlete Code    Athlete Name                                          Age        Gender\n");
+  printf(
+    "Athlete Code    Athlete Name                                          Age        Gender\n"
+  );
 }
 
 void printAthlete(Athlete_t athlete) {

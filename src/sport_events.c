@@ -99,11 +99,19 @@ void updateEventGender(Event_t *const event) {
 }
 
 static void printTableHeader(void) {
-  printf("Event Code      Event Name                                        Competitors    Gender\n");
+  printf(
+    "Event Code      Event Name                                        Competitors    Gender\n"
+  );
 }
 
 void printEvent(Event_t event) {
-  printf("   %-13d%-55s%-12d%c\n", event.eventCode, event.eventName, event.eventCompCount, event.eventGender);
+  printf(
+    "   %-13d%-55s%-12d%c\n",
+    event.eventCode,
+    event.eventName,
+    event.eventCompCount,
+    event.eventGender
+  );
 }
 
 void printSingleEvent(void) {
@@ -226,7 +234,9 @@ void eventRemove(void) {
     }
     int *regCodesToRemove = checkForRegistrationOfEvent(eventCode);
     if (regCodesToRemove[0] > 1) {
-      printf("\t\tThis event is currently registered\n\t\tWould you like to continue and remove the registration(s) as well? (Y/N): ");
+      printf(
+        "\t\tThis event is currently registered\n\t\tWould you like to continue and remove the registration(s) as well? (Y/N): "
+      );
       char choice;
       scanf("%c", &choice);
       clear();

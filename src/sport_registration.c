@@ -98,7 +98,12 @@ static void printTableHeader(void) {
 }
 
 void printRegistration(Registration_t registration) {
-  printf("         %-16d%-16d%d\n", registration.registrationCode, *registration.eventCode, *registration.athleteCode);
+  printf(
+    "         %-16d%-16d%d\n",
+    registration.registrationCode,
+    *registration.eventCode,
+    *registration.athleteCode
+  );
 }
 
 void printSingleRegistration(void) {
