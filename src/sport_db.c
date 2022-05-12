@@ -182,7 +182,7 @@ bool removeEventNode(int const eventCode) {
 struct AthleteNode *getAthleteNode(int const athleteCode) {
   struct AthleteNode *currAthlete = athleteList;
   while (currAthlete) {
-    if (currAthlete->athelete.athleteCode == athleteCode) {
+    if (currAthlete->athlete.athleteCode == athleteCode) {
       return currAthlete;
     }
     currAthlete = currAthlete->nextAthlete;
@@ -195,14 +195,14 @@ bool removeAthleteNode(int const athleteCode) {
   if (!currAthlete) {
     return false;
   }
-  if (currAthlete->athelete.athleteCode == athleteCode) {
+  if (currAthlete->athlete.athleteCode == athleteCode) {
     athleteList = currAthlete->nextAthlete;
     free(currAthlete);
     return true;
   }
 
   while (currAthlete->nextAthlete) {
-    if (currAthlete->nextAthlete->athelete.athleteCode == athleteCode) {
+    if (currAthlete->nextAthlete->athlete.athleteCode == athleteCode) {
       struct AthleteNode *temp = currAthlete->nextAthlete;
       currAthlete->nextAthlete = temp->nextAthlete;
       free(temp);

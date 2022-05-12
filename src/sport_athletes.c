@@ -7,7 +7,7 @@
 #include "sport_athletes.h"
 #include "sport_db.h"
 
-bool validAlthleteCode(int athleteCode) {
+bool validAthleteCode(int athleteCode) {
   if (athleteCode < 0) {
     printf("\t\tAthlete code out of bounds. Try again: ");
     return false;
@@ -16,12 +16,12 @@ bool validAlthleteCode(int athleteCode) {
 }
 
 bool athleteCodeAvailable(int athleteCode) {
-  if (!validAlthleteCode(athleteCode)) {
+  if (!validAthleteCode(athleteCode)) {
     return false;
   }
   struct AthleteNode *currAthlete = athleteList;
   while (currAthlete != NULL) {
-    if (currAthlete->athelete.athleteCode == athleteCode) {
+    if (currAthlete->athlete.athleteCode == athleteCode) {
       printf("\t\tAthlete code already exists. Try again: ");
       return false;
     }
@@ -137,7 +137,7 @@ void printSingleAthlete(void) {
     printf("\t\tAthlete code does not exists. Try again: ");
   }
   printTableHeader();
-  printAthlete(currAthlete->athelete);
+  printAthlete(currAthlete->athlete);
 }
 
 void printAllAthletes(void) {
@@ -148,7 +148,7 @@ void printAllAthletes(void) {
   struct AthleteNode *currAthlete = athleteList;
   printTableHeader();
   while (currAthlete) {
-    printAthlete(currAthlete->athelete);
+    printAthlete(currAthlete->athlete);
     currAthlete = currAthlete->nextAthlete;
   }
 }
@@ -174,7 +174,7 @@ void athleteNew(void) {
   }
   struct AthleteNode *athleteNode = malloc(sizeof (struct AthleteNode));
   if (!athleteNode) {
-    printf("\t\tUnable to allocate memeory\n");
+    printf("\t\tUnable to allocate memory\n");
     exit(1);
   }
   if (athleteList == NULL) {
@@ -186,10 +186,10 @@ void athleteNew(void) {
     }
     currAthlete->nextAthlete = athleteNode;
   }
-  athleteNode->athelete.athleteCode = athleteCode;
-  updateAthleteName(&athleteNode->athelete);
-  updateAthleteGender(&athleteNode->athelete);
-  updateAthleteAge(&athleteNode->athelete);
+  athleteNode->athlete.athleteCode = athleteCode;
+  updateAthleteName(&athleteNode->athlete);
+  updateAthleteGender(&athleteNode->athlete);
+  updateAthleteAge(&athleteNode->athlete);
   athleteNode->nextAthlete = NULL;
 }
 
@@ -210,10 +210,10 @@ void athleteUpdate(void) {
     }
     athleteNode = getAthleteNode(athleteCode);
     if (athleteNode) {
-      updateAthleteCode(&athleteNode->athelete);
-      updateAthleteName(&athleteNode->athelete);
-      updateAthleteGender(&athleteNode->athelete);
-      updateAthleteAge(&athleteNode->athelete);
+      updateAthleteCode(&athleteNode->athlete);
+      updateAthleteName(&athleteNode->athlete);
+      updateAthleteGender(&athleteNode->athlete);
+      updateAthleteAge(&athleteNode->athlete);
       return;
     }
     printf("\t\tAthlete code does not exist. Try again: ");

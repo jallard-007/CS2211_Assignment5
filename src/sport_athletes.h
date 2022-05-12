@@ -9,7 +9,7 @@ typedef struct Athlete {
 } Athlete_t;
 
 struct AthleteNode {
-  Athlete_t athelete;
+  Athlete_t athlete;
   struct AthleteNode *nextAthlete;
 };
 

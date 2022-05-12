@@ -74,7 +74,7 @@ void updateRegistrationAthleteCode(Registration_t *const registration) {
     }
     printf("\t\tAthlete code does not exist. Try again: ");
   }
-  registration->athleteCode = &athleteNode->athelete.athleteCode;
+  registration->athleteCode = &athleteNode->athlete.athleteCode;
 }
 
 void updateRegistrationEventCode(Registration_t *const registration) {

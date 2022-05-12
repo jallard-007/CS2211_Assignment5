@@ -173,7 +173,7 @@ void eventNew(void) {
   }
   struct EventNode *eventNode = malloc(sizeof (struct EventNode));
   if (!eventNode) {
-    printf("\t\tUnable to allocate memeory\n");
+    printf("\t\tUnable to allocate memory\n");
     exit(1);
   }
   if (eventList == NULL) {
