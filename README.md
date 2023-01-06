@@ -1,6 +1,11 @@
 # CS2211_Assignment5
 
-Assignment overview
+To run the program from the command line, in the repository's root directory:
+
+\$ make <br>
+\$ ./sport
+
+## Assignment overview
 
 The 2211 Winter Olympics is fast approaching
 

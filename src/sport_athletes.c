@@ -247,8 +247,10 @@ void athleteRemove(void) {
         }
         removeAthleteNode(athleteCode);
       }
+      free(regCodesToRemove);
       return;
     }
+    free(regCodesToRemove);
     if (removeAthleteNode(athleteCode)) {
       return;
     }

@@ -246,8 +246,10 @@ void eventRemove(void) {
         }
         removeEventNode(eventCode);
       }
+      free(regCodesToRemove);
       return;
     }
+    free(regCodesToRemove);
     if (removeEventNode(eventCode)) {
       return;
     }
