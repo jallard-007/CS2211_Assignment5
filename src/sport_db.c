@@ -253,7 +253,7 @@ int *checkForRegistrationOfAthlete(int const athleteCode) {
   int length = 1;
   while (currRegistration) {
     if (*currRegistration->registration.athleteCode == athleteCode) {
-      array = realloc(array, sizeof (int)*(++length));
+      array = realloc(array, sizeof (int) * (++length));
       array[length - 1] = currRegistration->registration.registrationCode;
     }
     currRegistration = currRegistration->nextRegistration;
@@ -268,7 +268,7 @@ int *checkForRegistrationOfEvent(int const eventCode) {
   int length = 1;
   while (currRegistration) {
     if (*currRegistration->registration.eventCode == eventCode) {
-      array = realloc(array, sizeof (int)*(++length));
+      array = realloc(array, sizeof (int) * (++length));
       array[length - 1] = currRegistration->registration.registrationCode;
     }
     currRegistration = currRegistration->nextRegistration;
